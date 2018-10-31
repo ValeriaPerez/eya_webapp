@@ -4,3 +4,4 @@ node_modules
 Documentacion/
 package-lock
 webpack-stats
+webpack-stats.json
