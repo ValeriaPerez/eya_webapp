@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: url('/static/img/flores.jpg');">
+<div class="banner" style="background-image: url('{{ url_image }}{% if not url_image %}/static/img/flores.jpg{% endif %}');">
 	<div class="banner__container">
 		<h1 class="banner__title">{{title}}</h1>	
 	</div>
