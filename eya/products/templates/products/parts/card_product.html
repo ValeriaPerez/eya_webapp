@@ -1,10 +1,10 @@
-<div class="card item">
+<div class="product-block item {{class}}">
     {% if item.image %}
-      <button class="card__button-image btnId">
-        <div id="image_eyamex" style="background-image: url({{MEDIA_PREFIX}}{{item.image}});" title="{{ item.code_eyamex }}" class="card__image"></div>
+      <button class="product-block__button-image btnId">
+        <div id="image_eyamex" style="background-image: url({{MEDIA_PREFIX}}{{item.image}});" title="{{ item.code_eyamex }}" class="product-block__image"></div>
       </button>
       {% else %}
-      <div class="card__no-found">No hay imagen</div>
+      <div class="product-block__image__nofound">No hay imagen</div>
     {% endif %}
   <div>
     <h4 id="code_eyamex">{{ item.code_eyamex }}</h4>

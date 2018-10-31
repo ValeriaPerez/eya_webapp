@@ -14,7 +14,7 @@
 {% block content %}
 
 {% get_media_prefix as MEDIA_PREFIX %}
-{% include "parts/banner.html" with title="Somos una compañía que entiende bien las necesidades del mundo de la moda." %}
+{% include "parts/banner.html" with title="Somos una compañía que entiende bien las necesidades del mundo de la moda." url_image="https://s-media-cache-ak0.pinimg.com/originals/3a/ef/8e/3aef8e019cc0c67e2c28309431df8e4f.jpg" %}
 
 <div class="content">
   
@@ -26,7 +26,7 @@
   <div class="content__results">
     <div class="productsCarousel owl-carousel">
       {% for item in news %}
-        {% include "products/parts/card_product.html"%}
+        {% include "products/parts/card_product.html" with class="product-block--carousel" %}
       {% empty %}
         <h3>No se encontraron resultados</h3>
       {% endfor %}
@@ -44,7 +44,7 @@
     <div class="productsCarousel owl-carousel">
       {% if best_seller %}
         {% for item in best_seller %}
-            {% include "products/parts/card_product.html" %}
+            {% include "products/parts/card_product.html" with class="product-block--carousel" %}
         {% endfor %}
       {% endif %}
     </div>
