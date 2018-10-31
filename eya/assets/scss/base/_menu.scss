@@ -1,0 +1,225 @@
+.close{
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 1px;
+
+	&:before, &:after{
+		content: '';
+		display: block;
+		position: absolute;
+		z-index: -1;
+		width: 100%;
+		height: 1px;
+		background:$black;
+		border-radius: 2px;
+	}
+	&:before{
+		
+	}
+	&:after{
+		
+	}
+}
+
+.menu{
+	width: 100%;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+	transition: visibility 0s 0.25s;
+
+	&.open{
+		visibility: visible;
+		color: $black;
+		transition: visibility 0.25s 0.25s;
+
+		& .menu__container{
+			overflow: auto;
+			translate3d: 0, 0, 0;
+
+			@media (min-width: $desktop){
+				width: auto;
+			}
+		}
+	}
+
+	&.scroll, &--gray{
+		& .menu__link{
+			color: $black;
+		}
+			
+		& .menu__link--main{
+			color: $black;
+			background-color: red;
+		}
+
+		& .menu__button{
+			/*button($border, $text, $borderH, $textH, $backgroundH)*/
+			@include button($black, $black, $black, $white, $blue-back);
+		}
+
+		& .menu__search{
+			border-bottom: 1px solid $black;
+			color: $black;
+			background: url(/static/img/search.png) no-repeat calc(98% - 0.5em);
+			background-size: 20px;
+			&::placeholder{
+				color: $black;
+				opacity: 1;
+				font-weight: 700;
+			}
+		}
+	}
+
+	&__close{
+		position: absolute;
+		background: none;
+		outline: none;
+		border: none;
+		padding: 2.5em 1.5em;
+		top: 0;
+		right: 0;
+		color: #000;
+		width: 70px;
+		@include fontSize(19px);
+		@media (min-width: $desktop){
+			display: none;
+		}
+	}
+
+	@media (min-width: $desktop){
+		position: relative;
+		visibility: visible;
+		width: auto;
+	}
+
+	&__container{
+		@include absoluteFullContainer;
+		display: flex;
+		align-items:center;
+		justify-content: center;
+		translate3d:100%, 0, 0;
+		transition: transform 0.35s ease-in-out;
+
+		background-color: $white;
+
+		@media (min-width: $desktop){
+			@include container;
+			translate3d: 0, 0, 0;
+			position: relative;
+			background-color: transparent;
+			display: block;
+		}
+	}
+
+	&__overlay{
+		@include absoluteFullContainer;
+		@media (min-width: $desktop){
+			display: none;
+		}
+	}
+
+	&__list{
+		text-align: center;
+		max-height: 90vh;
+		overflow: auto;
+		width: 100%;
+		padding: 0;
+
+		@media(min-width: $desktop){
+			display: flex;
+			align-items: center;
+			overflow: initial;
+			width: auto;
+		}
+	}
+
+	&__item{
+		display: block;
+		margin: 3em 0;
+		@media(min-width: $desktop){
+			margin: 0 0 0 2em;
+		}
+	}
+
+	&__search{
+		transition: visibility 0s 0.25s;
+		box-sizing: border-box;
+		width: 95%;
+		min-width: 200px;
+		background: transparent;
+		border: none;
+		border-bottom: 1px solid $black;
+		color: $black;
+		margin: 0;
+		background: rgba(243, 243, 243, 0.32);
+
+		@media (min-width: $desktop){
+			border-bottom: 1px solid $white;
+			color: $white;
+			min-width: 400px;
+		}
+
+		&::placeholder {
+		    color: $black;
+		    opacity: 1;
+		    font-weight: 700;
+		    @media (min-width: $desktop){
+				color: $white;
+			}
+
+		}
+	}
+
+	&__avatar{
+		@include fontSize(45px);
+		border-radius: 50%;
+		cursor: pointer;
+		width: 50px;
+		height: 50px;
+		background-size: cover;
+		background-position: center;
+		border: none;
+		outline: none;
+		&--main{
+			width: 45px;
+			height: 45px;
+		}
+
+		&.desktop-hide{
+			@media (min-width: $desktop){
+				display: none;
+			}
+		}
+
+		&.desktop-show{
+			display: none;
+			@media (min-width: $desktop){
+				display: block;
+			}
+		}
+	}
+	&__button{
+		@include button($black, $black, $black, $black, $white);
+		@media (min-width: $desktop){
+			@include button($white, $white, $white, green, $white);
+		}
+	}
+
+	.desktop-hide{
+		@media (min-width: $desktop){
+			display: none;
+		}
+	}
+
+	.desktop-show{
+		display: none;
+		@media (min-width: $desktop){
+			display: block;
+		}
+	}
+}
