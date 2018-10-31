@@ -1,14 +1,3 @@
-// Base files
-// ============
-@import "base/base";
-@import "base/header";
-@import "base/footer";
-
-// @import "plugins/magnific";
-@import "plugins/owl/owl.carousel";
-@import "plugins/pageflip";
-@import "plugins/trumbowyg";
-
 // Utils files
 // ============
 @import "utils/colors";
@@ -16,12 +5,23 @@
 @import "utils/mixins";
 @import "utils/animate";
 
+// @import "plugins/magnific";
+@import "plugins/owl/owl.carousel";
+@import "plugins/pageflip";
+@import "plugins/trumbowyg";
+
+// Base files
+// ============
+@import "base/base";
+@import "base/header";
+@import "base/footer";
+@import "base/menu";
+
 // Elements files
 // ============
-@import "elements/button";
 @import "elements/paged";
 @import "elements/loader";
-@import "elements/input";
+
 @import "elements/no-found";
 @import "elements/banner";
 
