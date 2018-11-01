@@ -3790,7 +3790,7 @@ body.trumbowyg-body-fullscreen {
       display: block;
       content: '';
       right: 100%;
-      background-color: #243035;
+      background-color: #0084ea;
       z-index: -1;
       transition: all 0.2s ease-in-out; }
     .menu.scroll .menu__button:hover, .menu--gray .menu__button:hover {
@@ -3885,12 +3885,11 @@ body.trumbowyg-body-fullscreen {
     box-sizing: border-box;
     width: 95%;
     min-width: 200px;
-    background: transparent;
     border: none;
     border-bottom: 1px solid #000000;
     color: #000000;
     margin: 0;
-    background: rgba(243, 243, 243, 0.32); }
+    background: rgba(0, 0, 0, 0.32); }
     @media (min-width: 960px) {
       .menu__search {
         border-bottom: 1px solid #ffffff;
@@ -3987,7 +3986,9 @@ body.trumbowyg-body-fullscreen {
         padding: 1em 3.5em;
         line-height: 2;
         text-align: center;
-        transition: all 0.2s ease-in-out; }
+        transition: all 0.2s ease-in-out;
+        background-color: rgba(0, 0, 0, 0.32);
+        font-weight: 600; }
         .menu__button:before {
           position: absolute;
           top: 0;
@@ -4008,11 +4009,11 @@ body.trumbowyg-body-fullscreen {
           display: block;
           content: '';
           right: 100%;
-          background-color: #ffffff;
+          background-color: #4f9bd6;
           z-index: -1;
           transition: all 0.2s ease-in-out; }
         .menu__button:hover {
-          color: green; }
+          color: #ffffff; }
           .menu__button:hover:before {
             top: 0.5em;
             left: 0.5em;
@@ -4020,7 +4021,9 @@ body.trumbowyg-body-fullscreen {
             bottom: -0.5em;
             border-color: #ffffff; }
           .menu__button:hover:after {
-            right: 0; } }
+            right: 0; }
+        .menu__button:hover {
+          background: transparent; } }
   @media (min-width: 960px) {
     .menu .desktop-hide {
       display: none; } }
@@ -4050,7 +4053,7 @@ body.trumbowyg-body-fullscreen {
     text-decoration: none;
     margin: 0 1em; }
   .paged__page {
-    color: #dc3b70; }
+    color: #3daf41; }
 
 .pagination {
   width: 100%;
@@ -4082,7 +4085,7 @@ body.trumbowyg-body-fullscreen {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 20;
   opacity: 0;
   transition: opacity 0.25s ease-in-out; }
@@ -4097,7 +4100,7 @@ body.trumbowyg-body-fullscreen {
   .loader__bounce {
     width: 18px;
     height: 18px;
-    background-color: #BABF44;
+    background-color: #0084ea;
     border-radius: 100%;
     display: inline-block;
     animation: sk-bouncedelay 1.4s infinite ease-in-out both; }
@@ -4106,13 +4109,13 @@ body.trumbowyg-body-fullscreen {
     .loader__bounce:nth-child(2) {
       animation-delay: -0.16s; }
 
-@keyframes (sk-bouncedelay) {
+@keyframes sk-bouncedelay {
   0%, 80%, 100% {
     transform: scale(0);
-    background-color: #37B2A4; }
+    background-color: #0084ea; }
   40% {
     transform: scale(1);
-    background-color: #BABF44; } }
+    background-color: #3daf41; } }
 
 .no-found {
   font-size: 1.07143em;
@@ -4238,7 +4241,7 @@ body.trumbowyg-body-fullscreen {
       display: block;
       content: '';
       right: 100%;
-      background-color: #37B2A4;
+      background-color: #000000;
       z-index: -1;
       transition: all 0.2s ease-in-out; }
     .error__button:hover {
@@ -4368,7 +4371,7 @@ input {
     outline: none;
     background: transparent;
     font-size: 1.42857em;
-    color: #313131;
+    color: #000000;
     position: absolute;
     top: 1.5em;
     right: 1.5em;
@@ -4410,7 +4413,7 @@ input {
       display: block;
       content: '';
       right: 100%;
-      background-color: #37B2A4;
+      background-color: #000000;
       z-index: -1;
       transition: all 0.2s ease-in-out; }
     .popup__btn:hover {
@@ -4728,7 +4731,7 @@ input {
 .content {
   background-color: #f3f3f3;
   padding: 2em;
-  min-height: calc(100vh - 220px); }
+  min-height: calc(100vh - 158px); }
   .content__info-results {
     display: flex;
     justify-content: space-between;

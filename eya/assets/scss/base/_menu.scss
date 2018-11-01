@@ -14,12 +14,6 @@
 		background:$black;
 		border-radius: 2px;
 	}
-	&:before{
-		
-	}
-	&:after{
-		
-	}
 }
 
 .menu{
@@ -59,7 +53,7 @@
 
 		& .menu__button{
 			/*button($border, $text, $borderH, $textH, $backgroundH)*/
-			@include button($black, $black, $black, $white, $blue-back);
+			@include button($black, $black, $black, $white, $blue);
 		}
 
 		& .menu__search{
@@ -151,12 +145,11 @@
 		box-sizing: border-box;
 		width: 95%;
 		min-width: 200px;
-		background: transparent;
 		border: none;
 		border-bottom: 1px solid $black;
 		color: $black;
 		margin: 0;
-		background: rgba(243, 243, 243, 0.32);
+		background: $black-transparent;
 
 		@media (min-width: $desktop){
 			border-bottom: 1px solid $white;
@@ -206,7 +199,12 @@
 	&__button{
 		@include button($black, $black, $black, $black, $white);
 		@media (min-width: $desktop){
-			@include button($white, $white, $white, green, $white);
+			@include button($white, $white, $white, $white, $blue-light);
+			background-color: $black-transparent;
+			font-weight: 600;
+			&:hover{
+				background: transparent;
+			}
 		}
 	}
 

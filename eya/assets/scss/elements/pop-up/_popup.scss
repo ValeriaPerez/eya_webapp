@@ -21,7 +21,7 @@
     &__close{
         @include clearButton;
         @include fontSize(20px);
-        color: $gray-dark;
+        color: $black;
         position: absolute;
         top: 1.5em;
         right: 1.5em;
@@ -29,7 +29,7 @@
         cursor: pointer;
     }
     &__btn{
-        @include button($black, $black, $black, $white, $green-button);
+        @include button($black, $black, $black, $white, $black);
         margin: 2em 0 0;
     }
 }

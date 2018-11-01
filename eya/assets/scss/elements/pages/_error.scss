@@ -63,7 +63,7 @@
         margin: 3em 0;
     }
     &__button{
-    	@include button($black, $black, $black, $white, $green-button);
+    	@include button($black, $black, $black, $white, $black);
     }
 
 }
