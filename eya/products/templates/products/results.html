@@ -2,16 +2,11 @@
 {% load static %}
 
 {% block extra_head %}
-  <meta name="description" content="Ensambles Y Adornos Mexico. Somos una compañía que comprende y entiende bien las necesidades del mundo de la moda.">
+  <meta name="description" content="Ensambles Y Adornos Mexico. Somos una compañía que entiende bien las necesidades del mundo de la moda.">
   <meta name="keywords" content="Fabricantes adornos, accesorios textiles, bisuteria, joyeria, bolsas, cajas y adornos del hogar.">
 
-  <title>Productos | Ensambles y Adornos</title>
+  <title>Resultados | Productos | Ensambles y Adornos</title>
   
-  <link rel="stylesheet" href="{% static 'css/product-list.css' %}">
-  <link rel="stylesheet" href="{% static 'css/paged.css' %}">
-  <link rel="stylesheet" href="{% static 'css/banner.css' %}">
-  <link rel="stylesheet" href="{% static 'css/popup-detail.css' %}">
-  <link rel="stylesheet" href="{% static 'css/card.css' %}">
 {% endblock %}
 
 
@@ -23,47 +18,25 @@
 
   <!-- TODOS LOS PRODUCTOS -->
 
-  <div class="info-results">
-    <h2 class="title-info-results">Resultados:</h2>
-    <a class="button-paged" href="{% url 'products-index' %}">Volver</a>
-
+  <div class="content__info-results">
+    <h2 class="content__title">Resultados</h2><a class="button-paged" href="{% url 'products-index' %}">Volver</a>
   </div>
-  <div class="results">
-    
+  <div class="content__results">
     {% if object_list %}
       {% for item in object_list %}
         {% include "products/parts/card_product.html"%}
       {% endfor %}
-    {% endif %}
 
+      <!-- PAGINADOR -->
+        {% include "parts/paged.html" %}
+      <!-- /PAGINADOR -->
+
+    {% else %}
+      <p>No se encontraron resultados</p>
+    {% endif %}
   </div>
 
   <!-- /TODOS LOS PRODUCTOS -->
-
-  <!-- PAGINADOR -->
-
-  <div class="pagination">
-    <div>
-      {% if page_obj.has_previous %}
-        <a href="?page=1&q={{q}}" class="button-paged">1</a>
-        <a href="?page={{ page_obj.previous_page_number }}&q={{q}}" class="button-paged">&#60;</a>
-      {% endif %}
-    </div>
-    
-    <div class="total-pages">
-      {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
-    </div>
-    
-    <div>
-    {% if page_obj.has_next %}
-      <a href="?page={{ page_obj.next_page_number }}&q={{q}}" class="button-paged">&#62;</a>
-      <a href="?page={{ page_obj.paginator.num_pages }}&q={{q}}" class="button-paged">{{ page_obj.paginator.num_pages }}</a>
-    {% endif %}
-    </div>
-    
-  </div>
-  {% include "products/parts/popup_detail.html" %}
-  <!-- /PGINADORS -->
 
 </div>
 {% endblock %}

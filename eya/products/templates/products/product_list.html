@@ -14,6 +14,7 @@
 {% block content %}
 
 {% get_media_prefix as MEDIA_PREFIX %}
+
 {% include "parts/banner.html" with title="Somos una compañía que entiende bien las necesidades del mundo de la moda." url_image="https://s-media-cache-ak0.pinimg.com/originals/3a/ef/8e/3aef8e019cc0c67e2c28309431df8e4f.jpg" %}
 
 <div class="content">
@@ -68,30 +69,8 @@
   <!-- /TODOS LOS PRODUCTOS -->
 
   <!-- PAGINADOR -->
-
-  <div class="pagination">
-    <div>
-      {% if page_obj.has_previous %}
-        <a href="?page=1&q={{q}}" class="button-paged">1</a>
-        <a href="?page={{ page_obj.previous_page_number }}&q={{q}}" class="button-paged">&#60;</a>
-      {% endif %}
-    </div>
-    
-    <div class="total-pages">
-      {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
-    </div>
-    
-    <div>
-    {% if page_obj.has_next %}
-      <a href="?page={{ page_obj.next_page_number }}&q={{q}}" class="button-paged">&#62;</a>
-      <a href="?page={{ page_obj.paginator.num_pages }}&q={{q}}" class="button-paged">{{ page_obj.paginator.num_pages }}</a>
-    {% endif %}
-    </div>
-    
-  </div>
-  <!-- Pop up detalle de prodcuto -->
-  {% include "products/parts/popup_detail.html" %}
-  <!-- /Pop up detalle de prodcuto -->
+  {% include "parts/paged.html" %}
+  <!-- /PAGINADOR -->
 </div>
 {% endblock %}
 

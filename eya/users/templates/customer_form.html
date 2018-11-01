@@ -1,16 +1,13 @@
 {% extends "base.html" %}
-
 {% load static %}
 {% block extra_head %}
   <title> Registro | Ensambles y Adornos </title>
   <link rel="stylesheet" href="{% static 'css/register.css' %}">
-  <link rel="stylesheet" href="{% static 'css/banner.css' %}">
-
 {% endblock %}
 
 {% block content %}
 <div class="register ">
-	{% include "image-banner.html" with title="Registro" %}
+	{% include "parts/banner.html" with title="Registro" %}
 	<div class="register__container">
 		<div class="register-center">
 			<h2>Complete el siguiente formulario para poder realizar un pedido</h2>
@@ -22,7 +19,7 @@
 		        {{ hidden }}
 		    {% endfor %}
 		    {{ form.as_p }}
-		    <button class="button-submit" type="submit">Guardar</button>
+		    <button class="menu__button" type="submit" title="Registrarme">Registrarme</button>
 		</form>
 	</div>
 </div>

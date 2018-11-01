@@ -29,7 +29,7 @@
 
         {% endif %}
 
-        <form method="post" action="{% url 'login' %}" class="form-login">
+        <form method="post" action="{% url 'login' %}" class="form-login" style="text-align: center;">
         {% csrf_token %}
           <div class="form-input">
             {{ form.username.label_tag }}
@@ -39,14 +39,13 @@
             {{ form.password.label_tag }}
             {{ form.password }}
           </div>
-          <input class="button-submit" type="submit" value="Iniciar Sesión" />
+          <button class="menu__button" type="submit" title="Iniciar Sesión">Iniciar Sesión</button>
           <input type="hidden" name="next" value="{{ next }}" />
         </form>
 
         {# Assumes you setup the password_reset view in your URLconf #}
-        <div style="text-align: center;">
-          {#<p><a class="login__link" href="{% url 'password_reset' %}">¿Olvidaste tu contraseña?</a></p>#}
-          <a class="login__link" href="{% url 'register-customer' %}">¿No tienes cuenta?</a>
+        <div style="text-align: center; margin-top: 2em;">
+          <a class="menu__button" href="{% url 'register-customer' %}" title="Ir a Registro">¿No tienes cuenta?</a>
         </div>
 
     </div>
