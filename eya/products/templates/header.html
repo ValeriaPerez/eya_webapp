@@ -24,7 +24,9 @@
                 </a>
               {% else %}
                 <form action="{% url 'products-index-results' %}" method="get">
-                  <input class="menu__search" type="text" placeholder="¿Qué estás buscando?" name="q">
+                  <input class="menu__search searchText" type="text" placeholder="¿Qué estás buscando?" name="q">
+                  <span class="search__error searchError"></span>
+                  <button type="submit" class="btnSearch" hidden="hidden"></button>
                 </form>
               {% endif %}
             </li>
@@ -33,7 +35,7 @@
               {% if request.user.username %}
                 <a class="menu__button" href="{% url 'cart' pk=user.customer.cart.pk %}" title="Ver carrito">Ver carrito</a>
               {% else %}
-                <a class="menu__button" href="{% url 'login' %}" stitle="Iniciar Sesïón">Iniciar Sesïón</a>
+                <a class="menu__button" href="{% url 'login' %}" title="Iniciar Sesïón">Iniciar Sesïón</a>
               {% endif%}
             </li>
           </ul>

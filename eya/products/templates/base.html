@@ -47,6 +47,15 @@
         {% include "header.html" %}
         {% block content %}{% endblock %}
         {% include "footer.html" %}
+        <!-- Pop up detalle de prodcuto -->
+        {% include "products/parts/popup_detail.html" %}
+        <!-- /Pop up detalle de prodcuto -->
+        <!-- Loader -->
+        <div id="loader" class="loader-container">
+            {% include "parts/loader.html" %}
+        </div>
+        <!-- /Loader -->
+
     </main>
 
     <!-- fonts -->
